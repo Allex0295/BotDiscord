@@ -1,5 +1,5 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client()
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 
 ///Liste des messages
 let InviteDiscord = new Discord.RichEmbed()
@@ -11,17 +11,27 @@ let InviteDiscord = new Discord.RichEmbed()
 
 //instance
 bot.on('ready', function () {
-	bot.user.setActivity('Accueil du Discord')
+	bot.user.setActivity('Accueil du Discord');
 })
 
 bot.on('message', function(message) {
 	switch(message.content) {
+		case '!pong' :
+
 		case '!help' :
 			message.channel.send('ok Help'); break;
 		case '!ts' :
 			message.channel.send('ok TS'); break;
 		case '!site' :
 			message.channel.send(InviteDiscord); break;
+		case '/join' :
+			if (message.member.voicechannel){
+				message.member.join()
+					.then(connecion => {
+						message.reply('Ok Join');
+					})
+			}
 	}
 })
+
 bot.login(process.env.TOKEN)
