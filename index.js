@@ -18,7 +18,7 @@ bot.on('ready', function () {
 bot.on('message', function(message) {
 	if (Google.match(message)){
 		return Google.action(message)
-	else
+	} else {
 		switch(message.content) {
 			case '!pong' :
 				message.channel.send('Pong!',user.ping)
