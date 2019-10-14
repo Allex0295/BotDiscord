@@ -4,7 +4,7 @@ module.exports = class Google {
 	}
 
 	static action (message) {
-		args = message.content.split(' ')
+		let args = message.content.split(' ')
 		args.shift()
 		message.reply('https://www.google.fr/#q=' + args.join('%20'))
 	}
