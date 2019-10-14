@@ -1,6 +1,6 @@
 module.exports = class Google {
 	static match (message) {
-		return message.content.startswitch('!google')
+		return message.content.startsWith('!google')
 	}
 
 	static action (message) {
