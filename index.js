@@ -17,7 +17,7 @@ bot.on('ready', function () {
 bot.on('message', function(message) {
 	switch(message.content) {
 		case '!pong' :
-
+			message.channel.send('Pong!',user.ping)
 		case '!help' :
 			message.channel.send('ok Help'); break;
 		case '!ts' :
